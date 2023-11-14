@@ -1,0 +1,45 @@
+This script is for training a face mask detection model using transfer learning with the MobileNetV2 architecture. Here's a breakdown of the code:
+
+1. **Importing Libraries:**
+   - Importing necessary libraries including TensorFlow, Keras, OpenCV, scikit-learn, and others.
+
+2. **Setting Constants:**
+   - Initializing constants like the initial learning rate, number of epochs, and batch size.
+
+3. **Loading Dataset:**
+   - Loading images from the dataset directory, resizing them to (224, 224) pixels, and performing preprocessing.
+   - Creating lists of data (images) and labels.
+
+4. **Data Preprocessing:**
+   - Performing one-hot encoding on the labels.
+   - Splitting the data into training and testing sets.
+
+5. **Data Augmentation:**
+   - Constructing an image data generator for data augmentation.
+
+6. **Loading MobileNetV2:**
+   - Loading the MobileNetV2 pre-trained model from Keras, excluding the fully connected layers.
+
+7. **Building the Model:**
+   - Constructing the head of the model to be placed on top of MobileNetV2.
+   - Compiling the final model.
+
+8. **Freezing Layers:**
+   - Freezing the layers of the base model to prevent them from being updated during the first training process.
+
+9. **Compiling the Model:**
+   - Compiling the model with binary cross-entropy loss and the Adam optimizer.
+
+10. **Training the Model:**
+    - Training the head of the network using the training set and the specified data augmentation.
+
+11. **Evaluating the Model:**
+    - Evaluating the trained model on the testing set and printing a classification report.
+
+12. **Saving the Model:**
+    - Saving the trained model to a file.
+
+13. **Plotting Loss and Accuracy:**
+    - Plotting the training loss and accuracy over epochs.
+
+This script follows a transfer learning approach, leveraging the pre-trained MobileNetV2 model for feature extraction and training a custom head for mask detection. Data augmentation is used to artificially increase the dataset size and improve model generalization. The training process involves freezing the base model layers during initial training and compiling the final model with binary cross-entropy loss for a binary classification task. The model is evaluated on a testing set, and the classification report is printed. Finally, the trained model is saved, and a plot of loss and accuracy is generated.
