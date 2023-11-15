@@ -45,7 +45,7 @@ python detect_mask_video.py
 ### Press 'q' to exit the application.
 
 ## Classification report
-
+```bash
      precision    recall  f1-score   support
 
    with_mask       0.98      1.00      0.99       383
@@ -54,6 +54,7 @@ without_mask       1.00      0.98      0.99       384
     accuracy                           0.99       767
    macro avg       0.99      0.99      0.99       767
 weighted avg       0.99      0.99      0.99       767
+```
 
 The classification report you provided is an evaluation summary for a face mask detection model. Here's a breakdown of the key metrics:
 
