@@ -46,7 +46,7 @@ python detect_mask_video.py
 
 ## Classification report
 ```bash
-     precision    recall  f1-score   support
+                precision    recall  f1-score   support
 
    with_mask       0.98      1.00      0.99       383
 without_mask       1.00      0.98      0.99       384
