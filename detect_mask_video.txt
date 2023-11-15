@@ -1,0 +1,32 @@
+This script is for real-time face mask detection using a pre-trained face detector model and a face mask classifier. Let's break down the code:
+
+1. **Importing Libraries:**
+   - Importing necessary libraries including TensorFlow, Keras, OpenCV, and others.
+
+2. **Function `detect_and_predict_mask`:**
+   - This function takes a frame, a face detector model (`faceNet`), and a face mask classifier model (`maskNet`) as input.
+   - It uses the face detector to locate faces in the frame.
+   - For each detected face, it extracts the face region, preprocesses it, and adds it to a list (`faces`).
+   - It also keeps track of the bounding box coordinates of the detected faces in the list `locs`.
+   - Finally, it uses the face mask classifier to predict whether each face is wearing a mask or not, and returns a tuple of face locations (`locs`) and corresponding predictions (`preds`).
+
+3. **Loading Models:**
+   - Loading the pre-trained face detector model (`faceNet`) and the face mask classifier model (`maskNet`) from disk.
+
+4. **Initializing Video Stream:**
+   - Initializing a video stream from the webcam.
+
+5. **Main Loop:**
+   - Looping over frames from the video stream.
+   - Reading a frame, resizing it to a maximum width of 400 pixels.
+   - Calling the `detect_and_predict_mask` function to detect faces and predict mask/no-mask for each face.
+   - Looping over the detected faces and their predictions:
+      - Determining the class label ("Mask" or "No Mask") based on the prediction.
+      - Drawing bounding boxes and labels on the frame.
+   - Displaying the output frame with bounding boxes and labels.
+   - Exiting the loop if the 'q' key is pressed.
+
+6. **Cleanup:**
+   - Closing the OpenCV windows and stopping the video stream.
+
+The script combines a pre-trained face detector (deployed using OpenCV's deep neural network module) with a face mask classifier. The face mask classifier is built using transfer learning on the MobileNetV2 architecture, as seen in the previous script you shared for training the mask detection model. This real-time application allows you to see the webcam feed with face mask predictions in real-time.
