@@ -16,7 +16,7 @@ Make sure you have the following dependencies installed:
 
 - Python (>=3.6)
 - TensorFlow (>=2.5)
-- OpenCV (>=4.0)
+- OpenCV (>=4.0) {4.5.5.64}
 - Imutils
 - Numpy
 
